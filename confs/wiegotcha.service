@@ -1,0 +1,13 @@
+[Unit]
+Description=Wiegotcha Service
+After=multi-user.target
+
+[Service]
+Type=forking
+User=root
+ExecStart=/usr/bin/screen -dmS wiegotcha -m /root/wiegotcha
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
